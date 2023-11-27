@@ -1,6 +1,5 @@
 export const environment = {
-    production: false,
-    firebase: {
+    configFireBase: {
         apiKey: "AIzaSyDOYs2YTfbiQQbnnhSfFy5ZS4Vb3itaCgA",
         authDomain: "crud-no-sql.firebaseapp.com",
         databaseURL: "https://crud-no-sql-default-rtdb.firebaseio.com",

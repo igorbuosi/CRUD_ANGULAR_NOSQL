@@ -59,7 +59,7 @@ import { ProdutosListarComponent } from './components/produtos/produtos-listar/p
     MatIconModule,
     MatListModule,
     MatCardModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.configFireBase),
     AngularFireDatabaseModule
   ],
   providers: [],
