@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './components/nav/nav.component';
 
+// Para trabalhar com formulários no Angular 12
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
 // Imports para componentes do Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -31,6 +34,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ProdutosCadastrarComponent } from './components/produtos/produtos-cadastrar/produtos-cadastrar.component';
 import { ProdutosListarComponent } from './components/produtos/produtos-listar/produtos-listar.component';
 
+import { NgxMaskModule } from "ngx-mask";
+import { ToastrModule } from 'ngx-toastr';
+import { PesquisaCodbarraComponent } from './components/produtos/pesquisa-codbarra/pesquisa-codbarra.component';
 
 @NgModule({
   declarations: [
@@ -39,9 +45,10 @@ import { ProdutosListarComponent } from './components/produtos/produtos-listar/p
     HeaderComponent,
     HomeComponent,
     ProdutosCadastrarComponent,
-    ProdutosListarComponent
+    ProdutosListarComponent,
+    PesquisaCodbarraComponent
   ],
-  imports: [
+  imports: [   
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -59,8 +66,16 @@ import { ProdutosListarComponent } from './components/produtos/produtos-listar/p
     MatIconModule,
     MatListModule,
     MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.configFireBase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgxMaskModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      closeButton: true,
+      progressBar: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

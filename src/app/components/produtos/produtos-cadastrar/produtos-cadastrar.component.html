@@ -1,1 +1,94 @@
-<p>produtos-cadastrar works!</p>
+<div class="container mat-elevation-z8">
+    <form class="form">
+        <h1 class="fullWidth">Formulário de Produto</h1>
+        <section class="section">
+         <!--   <mat-checkbox (click)="addPerfil(0)" class="margin" color="primary">Admin</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin" color="primary">Cliente</mat-checkbox>
+            <mat-checkbox (click)="addPerfil(2)" class="margin" color="primary">Cliente</mat-checkbox>-->
+        </section>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <input 
+            [(ngModel)]="produto.descricao"
+            name="descricao"
+            [formControl]="descricao"
+            required
+            matInput 
+            placeholder="Coca cola 2L"
+            maxlength="100">
+            <mat-icon matSuffix>description</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Código de Barras</mat-label>
+            <input 
+            [(ngModel)]="produto.codigobarra"
+            name="codigobarra"
+            [formControl]="codigobarra"
+            required
+            matInput 
+            placeholder="789456123"
+            maxlength="20">
+            <mat-icon matSuffix>qr_code_scanner</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Marca</mat-label>
+            <input 
+            [(ngModel)]="produto.marca"
+            name="marca"
+            [formControl]="marca"
+            required
+            matInput 
+            placeholder="Ambev"
+            maxlength="100">
+            <mat-icon matSuffix>unarchive</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Valor a Vista</mat-label>
+            <input 
+            [(ngModel)]="produto.valorvista"
+            name="valorvista"
+            [formControl]="valorvista"
+            required
+            matInput 
+            type="text"
+            mask="separator.2"
+            thousandSeparator="."
+            decimalSeparator=","
+            prefix="R$ "
+            allowNegative="false"
+            maxlength="20">
+            <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Valor a Prazo</mat-label>
+            <input 
+            [(ngModel)]="produto.valorprazo"
+            name="valorprazo"
+            [formControl]="valorprazo"
+            required
+            matInput
+            type="text"
+            mask="separator.2"
+            thousandSeparator="."
+            decimalSeparator=","
+            prefix="R$ "
+            allowNegative="false"
+            placeholder="60,60"
+            maxlength="20">
+            <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+
+
+
+        <button (click)="create()" [disabled]="!validaCampos()" class="fullWidth mat-elevation-z4" mat-raised-button>Salvar</button>
+        
+
+
+    </form>
+    <p class="fullWidth">by Igor Buosi</p>
+</div>

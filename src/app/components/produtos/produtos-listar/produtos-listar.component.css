@@ -1,0 +1,56 @@
+.container {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+button {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    color: green;
+}
+
+.edit {
+    color: rgb(0, 0, 0);
+}
+
+.delete {
+    color: rgb(253, 91, 91);
+}
+
+.fullWidth {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+ }
+ 
+
+.ml-auto {
+    margin-left: auto;
+}
+
+table {
+
+    border-collapse: collapse;
+}
+
+td {
+    text-align: left;
+    padding-left:18px;
+    padding-top:8px;
+}
+
+tr:nth-child(even) {
+    background-color: #d0f5c1
+}
+
+tr:hover:nth-child(1n + 2) {
+    background-color: #5b5b5b;
+    color: #fff;
+}
+
+th {
+    background-color: green;
+    color: #fff;
+    text-align: left;
+    padding:15px;
+}

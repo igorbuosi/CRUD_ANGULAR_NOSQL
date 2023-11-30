@@ -1,1 +1,39 @@
-<p>produtos-listar works!</p>
+<div class="container mat-elevation-z8">
+    <h1 class="fullWidth" style="text-align: center; margin-top: 20px;">Listagem de Produtos</h1>
+    <div style="display: flex; justify-content: flex-end;">
+        <button routerLink="create" mat-stroked-button><mat-icon>library_add</mat-icon>Cadastrar</button>
+    </div>
+    
+
+    <mat-card class="card">
+        <table>
+            <tr>
+                <th>Descrição</th>
+                <th>Código de Barras</th>
+                <th>Marca</th>
+                <th>Vlr Vista</th>
+                <th>Vlr Prazo</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let produto of produtos | async">
+                <td>{{produto.descricao}}</td>
+                <td>{{produto.codigobarra }}</td>
+                <td>{{produto.marca}}</td>
+                <td>{{produto.valorvista}}</td>
+                <td>{{produto.valorprazo}}</td>
+                <td>
+                    <button (click)="edit(produto, produto.key)" mat-icon-button>
+                        <mat-icon class="edit">edit</mat-icon>
+                    </button>
+                </td>
+                <td>
+                    <button (click)="delete(produto.key)" mat-icon-button>
+                        <mat-icon class="delete">delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </mat-card>
+
+</div>

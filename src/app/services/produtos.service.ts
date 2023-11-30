@@ -41,4 +41,20 @@ export class ProdutosService {
   delete(key: string) {
     this.db.object(`produto/${key}`).remove();
   }
+
+  getByCodigoBarra(codigoBarra: string) {
+    return this.db.list('produto', ref => ref.orderByChild('codigobarra').equalTo(codigoBarra))
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          const produto = changes[0]?.payload.val() as Produto;
+          if (produto) {
+            return { key: changes[0].payload.key, ...produto } as Produto;
+          } else {
+            return null;
+          }
+        })
+      );
+  }
+
 }
